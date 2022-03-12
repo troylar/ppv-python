@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from datetime import date
 
+import arrow
 from dateutil import rrule
 
 
@@ -38,3 +39,16 @@ class DateManager:
                 until=self.end_date,
             )
         )
+
+
+class DateFormatter:
+    @staticmethod
+    def to_month_title(date):
+        arrow_date = arrow.get(date)
+        return arrow_date.format("MMM 'YY")
+
+    def to_week_title(start_date, end_date):
+        arrow_start = arrow.get(start_date)
+        arrow_end = arrow.get(end_date)
+
+        return f'{arrow_start.format("MMM DD")} - {arrow_end.format("MMM DD")}'
