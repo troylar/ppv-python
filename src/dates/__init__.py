@@ -29,3 +29,12 @@ class DateManager:
                 until=self.end_date,
             )
         )
+
+    def get_days(self):
+        return list(
+            rrule.rrule(
+                rrule.DAILY,
+                dtstart=self.start_date,
+                until=self.end_date,
+            )
+        )

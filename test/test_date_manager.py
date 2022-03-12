@@ -27,3 +27,9 @@ class TestDateManager(unittest.TestCase):
             start_date=arrow.get("2022-03-01"), end_date=arrow.get("2022-03-30")
         )
         assert len(dm.get_weeks()) == 4
+
+    def test_can_get_days(self):
+        dm = DateManager(
+            start_date=arrow.get("2022-03-01"), end_date=arrow.get("2022-03-30")
+        )
+        assert len(dm.get_days()) == 30
