@@ -10,6 +10,7 @@ rich = "*"
 textual = "*"
 python-dateutil = "*"
 arrow = "*"
+types-python-dateutil = "*"
 
 [dev-packages]
 black = "*"
@@ -21,3 +22,6 @@ pytest-cov = "*"
 
 [requires]
 python_version = "3.10"
+
+[pipenv]
+allow_prereleases = true
