@@ -15,3 +15,15 @@ class TestDateManager(unittest.TestCase):
         test_date = arrow.get("2022-03-15")
         dm = DateManager(start_date=arrow.get("2022-03-01"), end_date=test_date)
         assert dm.end_date == test_date
+
+    def test_can_get_months(self):
+        dm = DateManager(
+            start_date=arrow.get("2022-03-01"), end_date=arrow.get("2022-03-30")
+        )
+        assert len(dm.get_months()) == 1
+
+    def test_can_get_weeks(self):
+        dm = DateManager(
+            start_date=arrow.get("2022-03-01"), end_date=arrow.get("2022-03-30")
+        )
+        assert len(dm.get_weeks()) == 4
